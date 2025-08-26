@@ -1,1 +1,1 @@
-export { default } from "./EditorPageContent";
+export { default } from './EditorPageContent';
