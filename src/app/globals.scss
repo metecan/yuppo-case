@@ -1,0 +1,287 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css');
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-color: #3b82f6;
+  --primary-foreground: #ffffff;
+  --primary-hover: #2563eb;
+  --primary-active: #1d4ed8;
+
+  --secondary-color: #f3f4f6;
+  --secondary-foreground: #374151;
+  --secondary-hover: #e5e7eb;
+  --secondary-active: #d1d5db;
+  --secondary-background: #f8f9fa;
+
+  --outline-foreground: #374151;
+  --outline-border: #d1d5db;
+  --outline-hover: #f3f4f6;
+  --outline-hover-foreground: #374151;
+  --outline-active: #e5e7eb;
+
+  --ghost-foreground: #374151;
+  --ghost-hover: #f3f4f6;
+  --ghost-hover-foreground: #374151;
+  --ghost-active: #e5e7eb;
+
+  --danger-color: #ef4444;
+  --danger-foreground: #ffffff;
+  --danger-hover: #dc2626;
+  --danger-active: #b91c1c;
+
+  --focus-color: #60a5fa;
+  --border-color: #e2e8f0;
+  --muted-foreground: #6c757d;
+  --code-background: #f5f5f5;
+  --code-foreground: #d63384;
+  --link-color: #3b82f6;
+  --accent-color: #3b82f6;
+
+  --textarea-background: #0f0f0f;
+  --textarea-secondary-background: #1a1a1a;
+  --textarea-foreground: #ffffff;
+  --textarea-muted-foreground: #a1a1aa;
+  --textarea-border-color: #27272a;
+  --keyword-background: #3b82f6;
+  --keyword-foreground: #ffffff;
+  --keyword-hover-background: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary-color: #3b82f6;
+    --primary-foreground: #ffffff;
+    --primary-hover: #2563eb;
+    --primary-active: #1d4ed8;
+
+    --secondary-color: #374151;
+    --secondary-foreground: #ffffff;
+    --secondary-hover: #4b5563;
+    --secondary-active: #6b7280;
+    --secondary-background: #1a1a1a;
+
+    --outline-foreground: #e5e7eb;
+    --outline-border: #374151;
+    --outline-hover: #374151;
+    --outline-hover-foreground: #ffffff;
+    --outline-active: #4b5563;
+
+    --ghost-foreground: #e5e7eb;
+    --ghost-hover: #374151;
+    --ghost-hover-foreground: #ffffff;
+    --ghost-active: #4b5563;
+
+    --danger-color: #ef4444;
+    --danger-foreground: #ffffff;
+    --danger-hover: #dc2626;
+    --danger-active: #b91c1c;
+
+    --focus-color: #60a5fa;
+    --border-color: #27272a;
+    --muted-foreground: #94a3b8;
+    --code-background: #1e293b;
+    --code-foreground: #f59e0b;
+    --link-color: #3b82f6;
+    --accent-color: #3b82f6;
+
+    --keyword-background: #3b82f6;
+    --keyword-foreground: #ffffff;
+    --keyword-hover-background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+// Global Markdown Styles
+.markdown {
+  max-width: none;
+  color: var(--foreground);
+  line-height: 1.6;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 1.5rem 0 1rem 0;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--foreground);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  h4 {
+    font-size: 1.125rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  h6 {
+    font-size: 0.875rem;
+  }
+
+  p {
+    margin: 1rem 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul,
+  ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+
+    li {
+      margin: 0.5rem 0;
+    }
+
+    ul,
+    ol {
+      margin: 0.5rem 0;
+    }
+  }
+
+  code {
+    background: var(--code-background);
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875em;
+    color: var(--code-foreground);
+  }
+
+  pre {
+    background: var(--code-background);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+    border: 1px solid var(--border-color);
+
+    code {
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.875rem;
+      color: inherit;
+    }
+  }
+
+  a {
+    color: var(--link-color);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  blockquote {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid var(--accent-color);
+    background: var(--secondary-background);
+    color: var(--muted-foreground);
+    font-style: italic;
+
+    p {
+      margin: 0.5rem 0;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+
+    th,
+    td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      font-weight: 600;
+      background: var(--secondary-background);
+    }
+
+    tr:nth-child(even) {
+      background: var(--secondary-background);
+    }
+  }
+
+  hr {
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid var(--border-color);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+  }
+}
+
+// Syntax highlighting styles
+.markdown .hljs {
+  background: var(--code-background) !important;
+  color: var(--code-foreground) !important;
+  padding: 1rem !important;
+  border-radius: 0.5rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
