@@ -1,4 +1,4 @@
-import EditorLayout from "src/components/layouts/EditorLayout";
+import EditorLayout from 'src/components/layouts/EditorLayout';
 
 interface EditorPageLayoutProps {
   children: React.ReactNode;

@@ -1,4 +1,4 @@
-import EditorPageContent from "src/components/pages/EditorPageContent";
+import EditorPageContent from 'src/components/pages/EditorPageContent';
 
 const EditorPage = () => {
   return <EditorPageContent />;
