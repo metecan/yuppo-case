@@ -1,1 +1,1 @@
-export { default } from "./EditorLayout";
+export { default } from './EditorLayout';

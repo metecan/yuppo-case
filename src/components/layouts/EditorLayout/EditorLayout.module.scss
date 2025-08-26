@@ -1,4 +1,7 @@
 .editorLayout {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--background);
+  height: 100vh;
 }
